@@ -107,4 +107,5 @@ export const getCommentById = async ( id: string ) => {
     where: eq(comments.id,id),
     with: { user: true }
   });
+  return comment;
 }
