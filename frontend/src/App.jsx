@@ -5,10 +5,15 @@ import EditProductPage from "./pages/EditProductPage";
 import ProductPage from "./pages/ProductPage"
 import CreatePage from "./pages/CreatePage"
 import ProfilePage from "./pages/ProfilePage"
-
+import useAuthReq from "./hooks/useAuthReq";
+import useUserSync from "./hooks/useUserSync";
 function App() {
 
+  const { isClerkLoaded, isSignedIn }= useAuthReq();
+  useUserSync();
 
+  if(!isClerkLoaded) return null;
+  
   return (
     <>
       <div className="min-h-screen bg-base-100">
