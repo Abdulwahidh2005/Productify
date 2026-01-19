@@ -42,5 +42,9 @@ export const useMyProducts = () => {
   return useQuery({
     queryKey: ["myProducts"],
     queryFn: getMyProducts,
-  })
+  });
+};
+
+export const useUpdateProduct = () => {
+  return useMutation({ mutationFn: updateProduct})
 }
